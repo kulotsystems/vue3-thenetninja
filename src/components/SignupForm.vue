@@ -15,6 +15,7 @@
 
         <label for="skills">Skills</label>
         <input type="text" id="skills" v-model="tempSkill" @keyup.alt="addSkill">
+        <div><label style="margin-top: 1px; margin-bottom: 0;">(ALT + comma to add)</label></div>
         <div v-for="skill in skills" :key="skill" class="pill" @click="removeSkill(skill)">
             {{ skill }}
         </div>
