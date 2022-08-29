@@ -1,14 +1,32 @@
 <template>
-    <SignupForm/>
+    <div id="nav">
+        <router-link :to="{ name: 'Home' }">Home</router-link>
+        <router-link :to="{ name: 'About' }">About</router-link>
+        <router-link :to="{ name: 'Jobs' }">Jobs</router-link>
+    </div>
+    <button @click="redirect">Redirect</button>
+    <button @click="back">Go back</button>
+    <button @click="forward">Go forward</button>
+
+    <router-view/>
 </template>
 
 <script>
-    import SignupForm from './components/SignupForm.vue';
-
     export default {
         name: 'App',
-        components: {
-            SignupForm
+        components: {},
+        methods: {
+            redirect() {
+                this.$router.push({ name: 'Home' });
+            },
+
+            back() {
+                this.$router.go(-1);
+            },
+
+            forward() {
+                this.$router.go(1);
+            }
         }
     }
 </script>
@@ -20,11 +38,33 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
-        margin-top: 60px;
+        max-width: 960px;
+        margin: 0 auto;
     }
 
-    body {
-        margin: 0;
-        background: #eee;
+    #nav {
+        padding: 30px;
+    }
+
+    #nav a {
+        font-weight: bold;
+        color: #2c3e50;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 4px;
+        margin: 0 5px;
+    }
+
+    #nav a.router-link-exact-active {
+        color: white;
+        background: crimson;
+    }
+
+    button {
+        margin: 0 10px;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
     }
 </style>
