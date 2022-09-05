@@ -1,13 +1,43 @@
 <template>
     <div class="home">
-        <h1>Homepage</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam beatae dolorem earum eligendi esse hic laudantium magnam maiores maxime natus nesciunt nihil, nobis, perferendis possimus repellendus suscipit voluptate! Ab, cumque dignissimos dolorem nobis quaerat quibusdam ratione unde? Esse iusto nobis recusandae rerum vel. A accusamus accusantium aliquam animi aperiam assumenda consequatur corporis debitis delectus dolore doloremque eius ex facere, fuga, fugit id impedit laborum libero magni minus modi mollitia necessitatibus nisi odio officia perferendis quae quam qui quo saepe sapiente, sit sunt temporibus tenetur unde vel voluptas. Consequuntur doloribus dolorum eveniet excepturi inventore natus, nobis sint soluta totam voluptatem. Blanditiis.</p>
+        <h1>Home</h1>
+        <input type="text" v-model="search">
+        <p>Searching for <b>{{ search }}</b></p>
+        <div v-for="name in matchingNames" :key="name">
+            {{ name }}
+        </div>
+        <button @click="handleClick">Stop Watching</button>
     </div>
 </template>
 
 <script>
+    import { computed, ref, watch, watchEffect } from 'vue';
+
     export default {
-        name: 'Home'
+        name: 'Home',
+        setup() {
+            const search = ref('');
+            const names  = ref(['mario', 'yoshi', 'luigi', 'toad', 'bowser', 'koopa', 'peach']);
+
+            const stopWatch = watch(search, () => {
+                console.log('watch function ran');
+            });
+
+            const stopEffect = watchEffect(() => {
+                console.log('watchEffect function run', search.value);
+            });
+
+            const matchingNames = computed(() => {
+                return names.value.filter((name) => name.includes(search.value));
+            });
+
+            const handleClick = () => {
+                stopWatch();
+                stopEffect();
+            };
+
+            return { names, search, matchingNames, handleClick }
+        }
     }
 </script>
 
