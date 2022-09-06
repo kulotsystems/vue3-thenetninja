@@ -1,7 +1,20 @@
 {
-  "jobs": [
-    { "title": "Ninja UX Designer"  , "id": 1, "details": "lorem" },
-    { "title": "Ninja Web Developer", "id": 2, "details": "lorem" },
-    { "title": "Ninja Vue Developer", "id": 3, "details": "lorem" }
+  "posts": [
+    {
+      "id": 1,
+      "title": "Welcome to the New Blog",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid assumenda debitis dolores est eum, iste itaque, iure nemo nulla porro quaerat quis, quisquam repellat repudiandae soluta unde! Aliquid enim libero nemo nostrum odio perferendis repellendus sunt tenetur. Delectus hic mollitia nobis sunt. Ad assumenda eius facilis fugiat in inventore labore, natus odio odit optio perspiciatis quis quod quos, sint suscipit temporibus voluptas. Ab dolores eligendi fuga id minima modi mollitia, nemo numquam pariatur quam, quisquam ratione recusandae sequi soluta ullam vel voluptatem voluptates. Aliquid architecto exercitationem laboriosam minima non, odit quaerat quia velit veniam voluptatem! Commodi earum eveniet repudiandae.",
+      "tags": [
+        "webdev", "coding", "news"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Top 5 CSS Tips",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, deleniti dolores facere fugit odio saepe sunt! Autem consequatur fuga quia quis repellendus? Blanditiis commodi explicabo laudantium odio similique. Accusamus consequatur error fugiat natus odit quam quia quos repellat ullam veritatis. Adipisci atque consectetur delectus dolorum, ea, eius eligendi expedita facere facilis ipsam laboriosam magnam necessitatibus nesciunt odio odit omnis perspiciatis porro provident quae quasi repellendus reprehenderit sit, unde velit voluptatum? Ab, assumenda atque esse et facere impedit in ipsa labore magnam necessitatibus numquam obcaecati odio pariatur perferendis possimus provident quidem quis sit totam veritatis. Ea fuga molestiae numquam omnis voluptatibus!",
+      "tags": [
+        "css", "webdev", "coding"
+      ]
+    }
   ]
 }
